@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1A2EC58D-31B1-4B74-9559-E611F997F381}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ES.CommandStack</RootNamespace>
+    <AssemblyName>ES.CommandStack</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Events\CartEvent.cs" />
+    <Compile Include="Events\ICreateOrderEvent.cs" />
+    <Compile Include="Events\CreateOrderEvent.cs" />
+    <Compile Include="Events\ICartEvent.cs" />
+    <Compile Include="Events\ILoginDoneEvent.cs" />
+    <Compile Include="Events\IProductCreatedEvent.cs" />
+    <Compile Include="Events\LoginDoneEvent.cs" />
+    <Compile Include="Events\ProductCreatedEvent.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Requests\CreateOrderRequest.cs" />
+    <Compile Include="Requests\GetOrderByOrderIdRequest.cs" />
+    <Compile Include="Requests\GetOrderByCustomerIdRequest.cs" />
+    <Compile Include="Requests\GetHistoryForCustomerRequest.cs" />
+    <Compile Include="Requests\GetLoginDetailsRequest.cs" />
+    <Compile Include="Requests\GetCartByCustomerIdRequest.cs" />
+    <Compile Include="Requests\GetProductByIdRequest.cs" />
+    <Compile Include="Requests\GetProductsRequest.cs" />
+    <Compile Include="Requests\DeleteProductRequest.cs" />
+    <Compile Include="Requests\AddtoCartRequest.cs" />
+    <Compile Include="Requests\InsertUpdateProductRequest.cs" />
+    <Compile Include="Requests\RemoveFromCartRequest.cs" />
+    <Compile Include="Responses\CreateOrderResponse.cs" />
+    <Compile Include="Responses\BaseResponse.cs" />
+    <Compile Include="Responses\DeleteProductResponse.cs" />
+    <Compile Include="Responses\GetHistoryForCustomerResponse.cs" />
+    <Compile Include="Responses\GetLoginDetailsResponse.cs" />
+    <Compile Include="Responses\GetCartByCustomerIdResponse.cs" />
+    <Compile Include="Responses\GetOrderByOrderIdResponse.cs" />
+    <Compile Include="Responses\GetOrderByCustomerIdResponse.cs" />
+    <Compile Include="Responses\GetProductByIdResponse.cs" />
+    <Compile Include="Responses\GetProductsResponse.cs" />
+    <Compile Include="Responses\AddtoCartResponse.cs" />
+    <Compile Include="Responses\InsertUpdateProductResponse.cs" />
+    <Compile Include="Responses\RemoveFromCartResponse.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ES.Common\ES.Common.csproj">
+      <Project>{08ED7261-3D32-46C0-A4C7-F419A650A654}</Project>
+      <Name>ES.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ES.Domain\ES.Domain.csproj">
+      <Project>{893AFFFE-92B1-45E2-89F5-B8CB90FF00D1}</Project>
+      <Name>ES.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ESSample.Common\ESSample.Common.csproj">
+      <Project>{9CB28B40-F0E8-426D-9D47-01695FE1AE1F}</Project>
+      <Name>ESSample.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
